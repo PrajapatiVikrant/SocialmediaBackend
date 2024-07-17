@@ -12,7 +12,7 @@ import ProfileSchema from "./Model/ProfileSchema.js";
 config()
 
 const server = createServer(app)
-export const io = new Server(server,{
+ const io = new Server(server,{
     cors:{
         origin: "https://green-nurse-xdrxl.pwskills.app:5173/message", 
         methods: ["GET", "POST"]
