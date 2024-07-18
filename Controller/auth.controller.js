@@ -1,6 +1,6 @@
-// const ProfileSchema = require("../Model/ProfileSchema.js");
-// const bcrypt = require("bcrypt")
-// const jwt = require("jsonwebtoken")
+const ProfileSchema = require("../Model/ProfileSchema.js");
+const bcrypt = require("bcrypt")
+const jwt = require("jsonwebtoken")
 
 // const auth = {
 //   signup: async (req, res) => {
