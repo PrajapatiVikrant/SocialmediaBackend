@@ -18,7 +18,7 @@ app.use(fileUpload({
     useTempFiles : true,
     tempFileDir : '/tmp/'
 }))
-app.get('/socialmedia',auth)
+app.use('/socialmedia',auth)
 app.use('/socialmedia/auth',auth);
 app.use('/socialmedia/post',post)
 app.use('/socialmedia/profile',profile);
