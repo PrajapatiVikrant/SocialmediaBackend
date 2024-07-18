@@ -17,6 +17,11 @@ app.use(fileUpload({
     useTempFiles : true,
     tempFileDir : '/tmp/'
 }))
+app.use('/socilamedia',(req,res)=>{
+    res.json({
+        message:'hello world'
+    })
+})
 app.use('/socialmedia/auth',auth);
 app.use('/socialmedia/post',post)
 app.use('/socialmedia/profile',profile);
