@@ -14,7 +14,7 @@ config()
 const server = createServer(app)
  const io = new Server(server,{
     cors:{
-        origin: "https://vikrant-socialmedia-frontend.vercel.app/message", 
+        origin: "https://vikrant-socialmedia-frontend.vercel.app", 
         methods: ["GET", "POST"]
     }
 })
