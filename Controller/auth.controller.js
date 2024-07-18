@@ -72,10 +72,39 @@ const jwt = require("jsonwebtoken")
 //   }
 // };
 const auth = {
-  login:(req,res)=>{
-    res.json({
-      message:"hello world"
-    })
-  }
+  login: async (req, res) => {
+        const {email,password} = req.params;
+        try {
+          const data = await ProfileSchema.findOne({email:email});
+          if(!data){
+            return res.json({
+              message:'You are not exist register now'
+            })
+          }
+          const passwordmatch = await bcrypt.compare(password,data.password);
+          if(passwordmatch){
+           
+            const token =  jwt.sign(
+              { email: email,id:data._id},
+              process.env.JWT_SECRET,
+              { expiresIn: "60m" }
+              );
+             return res.json({
+              id:data._id,
+              message:'Login successfully',
+              token:token
+            })
+          }
+          return res.json({
+            message:'Invalid detail'
+          })
+          
+        } catch (error) {
+          console.log('login')
+          res.json({
+            message:'server error'
+          })
+        }
+      },
 }
  module.exports = auth;
