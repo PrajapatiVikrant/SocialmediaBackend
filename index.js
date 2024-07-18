@@ -14,7 +14,7 @@ config()
 const server = createServer(app)
  const io = new Server(server,{
     cors:{
-        origin: "https://green-nurse-xdrxl.pwskills.app:5173/message", 
+        origin: "https://vikrant-socialmedia-frontend.vercel.app/message", 
         methods: ["GET", "POST"]
     }
 })
