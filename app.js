@@ -17,7 +17,7 @@ app.use(fileUpload({
     useTempFiles : true,
     tempFileDir : '/tmp/'
 }))
-app.use('/socilamedia',(req,res)=>{
+app.get('/',(req,res)=>{
     res.json({
         message:'hello world'
     })
