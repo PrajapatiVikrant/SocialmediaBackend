@@ -74,7 +74,7 @@ const jwt = require("jsonwebtoken")
 const auth = {
   login: async (req, res) => {
          const {email,password} = req.params;
-        // try {
+        try {
         //   const data = await ProfileSchema.findOne({email:email});
         //   if(!data){
         //     return res.json({
@@ -98,16 +98,17 @@ const auth = {
         //   return res.json({
         //     message:'Invalid detail'
         //   })
-          
-        // } catch (error) {
-        //   console.log('login')
-        //   res.json({
-        //     message:'server error'
-        //   })
-        // }
         res.json({
           message:"hello world 1"
         })
+          
+        } catch (error) {
+          console.log('login')
+          res.json({
+            message:'server error'
+          })
+        }
+        
       },
 }
  module.exports = auth;
