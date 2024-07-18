@@ -8,6 +8,7 @@ import post from "./Routes/Post.route.js"
 import profile from "./Routes/Profile.route.js"
 import message from "./Routes/Message.route.js"
 import cors from "cors"
+import avai from "./Controller/avai.js"
 
 const app = express();
 
@@ -17,11 +18,7 @@ app.use(fileUpload({
     useTempFiles : true,
     tempFileDir : '/tmp/'
 }))
-app.get('/',(req,res)=>{
-    res.json({
-        message:'hello world'
-    })
-})
+app.get('/',avai)
 app.use('/socialmedia/auth',auth);
 app.use('/socialmedia/post',post)
 app.use('/socialmedia/profile',profile);
