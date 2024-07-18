@@ -6,8 +6,8 @@ const JWTverify = require("../Middleware/JWTverify.js");
 
 const route = Router();
 
-// route.post('/signup',auth.signup)
+route.post('/signup',auth.signup)
 route.post('/login/:email/:password',auth.login)
-// route.post('/checklogin',JWTverify,auth.checklogin)
+route.post('/checklogin',JWTverify,auth.checklogin)
 
 module.exports = route;
