@@ -76,11 +76,11 @@ const auth = {
          const {email,password} = req.params;
         try {
          const data = await ProfileSchema.findOne({email:email});
-          if(!data){
-            return res.json({
-              message:'You are not exist register now'
-            })
-          }
+          // if(!data){
+          //   return res.json({
+          //     message:'You are not exist register now'
+          //   })
+          // }
         //   const passwordmatch = await bcrypt.compare(password,data.password);
         //   if(passwordmatch){
            
@@ -99,7 +99,7 @@ const auth = {
         //     message:'Invalid detail'
         //   })
         res.json({
-          message:"hello world 3"
+          message:"hello world 4"
         })
           
         } catch (error) {
