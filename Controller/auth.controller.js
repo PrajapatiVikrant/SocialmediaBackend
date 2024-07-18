@@ -75,12 +75,12 @@ const auth = {
   login: async (req, res) => {
          const {email,password} = req.params;
         try {
-        //   const data = await ProfileSchema.findOne({email:email});
-        //   if(!data){
-        //     return res.json({
-        //       message:'You are not exist register now'
-        //     })
-        //   }
+         const data = await ProfileSchema.findOne({email:email});
+          if(!data){
+            return res.json({
+              message:'You are not exist register now'
+            })
+          }
         //   const passwordmatch = await bcrypt.compare(password,data.password);
         //   if(passwordmatch){
            
