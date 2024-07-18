@@ -81,7 +81,7 @@ const auth = {
           //     message:'You are not exist register now'
           //   })
           // }
-        //   const passwordmatch = await bcrypt.compare(password,data.password);
+           const passwordmatch = await bcrypt.compare(password,data.password);
         //   if(passwordmatch){
            
         //     const token =  jwt.sign(
