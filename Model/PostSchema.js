@@ -1,4 +1,5 @@
-import mongoose, { Schema, model } from "mongoose";
+const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose")
 
 const Post = new Schema({
   title: {
@@ -50,4 +51,4 @@ const Post = new Schema({
     
 });
 const PostSchema = model("SocialmediaPost", Post);
-export default PostSchema;
+module.exports = PostSchema;

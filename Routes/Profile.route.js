@@ -1,6 +1,6 @@
-import { Router } from "express";
-import profile from "../Controller/profile.controller.js";
-import JWTverify from "../Middleware/JWTverify.js";
+const { Router } = require("express");
+const profile = require("../Controller/profile.controller.js");
+const JWTverify = require("../Middleware/JWTverify.js");
 const route = Router();
 
 route.get('/',JWTverify,profile.getProfile)
@@ -15,4 +15,4 @@ route.post('/connect/:user_id/:user_name',JWTverify,profile.CreateConnection);
 
 
 
-export default route;
+module.exports = route;

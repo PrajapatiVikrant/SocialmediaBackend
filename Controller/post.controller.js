@@ -1,8 +1,8 @@
-import { v2 as cloudinary } from "cloudinary";
-import { config } from "dotenv";
-import PostSchema from "../Model/PostSchema.js";
+const cloudinary  =  require("cloudinary").v2;
+const { config } = require("dotenv");
+const PostSchema = require("../Model/PostSchema.js");
 config();
-import postSchema from "../Model/PostSchema.js";
+
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -16,7 +16,7 @@ const post = {
       const { title } = req.query;
       const file = req.files.postImage;
       const upload = await cloudinary.uploader.upload(file.tempFilePath);
-      const data = new postSchema({
+      const data = new PostSchema({
         title: title,
         url: upload.url,
         postedBy: {
@@ -38,7 +38,7 @@ const post = {
   Display: async (req, res) => {
     const { id } = req.user
     try{
-        const data = await postSchema.find({'postedBy.id':id});
+        const data = await PostSchema.find({'postedBy.id':id});
         res.json({
             message:data
         })
@@ -51,7 +51,7 @@ const post = {
   displaysearch:async (req,res)=>{
       const { userId } = req.params;
       try {
-        const data = await postSchema.find({'postedBy.id':userId});
+        const data = await PostSchema.find({'postedBy.id':userId});
         res.json({
             message:data
         })
@@ -202,4 +202,4 @@ const post = {
   },
   Uncomment: async (req, res) => {},
 };
-export default post;
+module.exports = post;

@@ -1,4 +1,5 @@
-import mongoose, { Schema, model } from "mongoose";
+const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose")
 
 const Profile = new Schema({
   name: {
@@ -84,4 +85,4 @@ const Profile = new Schema({
   ],
 });
 const ProfileSchema = model("SocialmediaProfile", Profile);
-export default ProfileSchema;
+module.exports = ProfileSchema;

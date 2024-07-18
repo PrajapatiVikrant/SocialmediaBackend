@@ -1,15 +1,10 @@
-import express from "express"
-import mongoose from "mongoose"
-import morgan from "morgan"
-import fileUpload from "express-fileupload"
-import db from "./Config/db.js"
-import Auth from "./Routes/Auth.route.js"
-import post from "./Routes/Post.route.js"
-import profile from "./Routes/Profile.route.js"
-import message from "./Routes/Message.route.js"
-import cors from "cors"
-import avai from "./Controller/avai.js"
-import auth from "./Controller/auth.controller.js"
+const express =  require("express")
+const mongoose = require("mongoose")
+const morgan = require("morgan")
+const fileUpload = require("express-fileupload")
+require("./Config/db.js")
+
+const cors = require("cors");
 
 const app = express();
 
@@ -19,10 +14,10 @@ app.use(fileUpload({
     useTempFiles : true,
     tempFileDir : '/tmp/'
 }))
-app.post('/socialmedia/login',auth.login)
-app.use('/socialmedia/auth',Auth);
-app.use('/socialmedia/post',post)
-app.use('/socialmedia/profile',profile);
-app.use('/socialmedia/message',message);
 
-export default app;
+app.use('/socialmedia/auth',require("./Routes/Auth.route.js"));
+app.use('/socialmedia/post',require("./Routes/Post.route.js"))
+app.use('/socialmedia/profile',require("./Routes/Profile.route.js"));
+app.use('/socialmedia/message',require("./Routes/Message.route.js"));
+
+module.exports = app;

@@ -1,7 +1,7 @@
-import { config } from "dotenv"
+const { config } =  require("dotenv")
 config()
-import ProfileSchema from "../Model/ProfileSchema.js"
-import jwt from 'jsonwebtoken'
+const ProfileSchema = require("../Model/ProfileSchema.js")
+const jwt = require('jsonwebtoken')
 
 
 const JWTverify = async(req,res,next)=>{
@@ -36,4 +36,4 @@ const JWTverify = async(req,res,next)=>{
     }
 
 }
-export default JWTverify;
+module.exports = JWTverify;

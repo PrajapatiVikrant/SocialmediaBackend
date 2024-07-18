@@ -1,14 +1,14 @@
-import express from "express";
-import { createServer } from "http"
-import { Server } from "socket.io"
-import jwt from "jsonwebtoken"
-import { config } from "dotenv";
-import mongoose from "mongoose"
-import db from "./Config/db.js"
-import app from "./app.js";
-import MessageSchema from "./Model/MessageSchema.js";
-import JWTverify from "./Middleware/JWTverify.js";
-import ProfileSchema from "./Model/ProfileSchema.js";
+const express = require("express");
+const { createServer } = require("http")
+const { Server } = require("socket.io")
+const jwt = require("jsonwebtoken")
+const { config } = require("dotenv");
+const mongoose = require("mongoose")
+const db = require("./Config/db.js")
+const app = require("./app.js");
+const MessageSchema = require("./Model/MessageSchema.js");
+const JWTverify = require("./Middleware/JWTverify.js");
+const ProfileSchema = require("./Model/ProfileSchema.js");
 config()
 
 const server = createServer(app)

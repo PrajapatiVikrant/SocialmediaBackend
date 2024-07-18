@@ -1,4 +1,5 @@
-import mongoose, { Schema, model } from "mongoose";
+const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose")
 
 const message = new Schema({
   user1: {
@@ -45,4 +46,4 @@ const message = new Schema({
   ],
 });
 const MessageSchema = model("SocialmediaMessage", message);
-export default MessageSchema;
+module.exports = MessageSchema;

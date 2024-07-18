@@ -1,6 +1,6 @@
-import { Router } from "express";
-import post from "../Controller/post.controller.js";
-import JWTverify from "../Middleware/JWTverify.js";
+const { Router } = require("express");
+const post = require("../Controller/post.controller.js");
+const JWTverify = require("../Middleware/JWTverify.js");
 const route = Router();
 
 route.post('/create',JWTverify,post.Create)
@@ -15,4 +15,4 @@ route.get('/showcomments/:post_id',post.DisplayComment);
 route.post('/comment/:post_id',JWTverify,post.Comment);
 route.post('/uncomment',JWTverify,post.Uncomment);
 
-export default route;
+module.exports = route;

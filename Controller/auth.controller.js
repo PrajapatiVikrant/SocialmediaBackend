@@ -1,6 +1,6 @@
-import ProfileSchema from "../Model/ProfileSchema.js";
-import bcrypt from "bcrypt"
-import jwt from "jsonwebtoken";
+const ProfileSchema = require("../Model/ProfileSchema.js");
+const bcrypt = require("bcrypt")
+const jwt = require("jsonwebtoken")
 
 const auth = {
   signup: async (req, res) => {
@@ -71,4 +71,4 @@ const auth = {
    })
   }
 };
-export default auth;
+module.exports = auth;

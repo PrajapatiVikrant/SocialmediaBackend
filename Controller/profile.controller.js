@@ -1,7 +1,6 @@
-import { v2 as cloudinary } from "cloudinary";
-import { config } from "dotenv";
-import MessageSchema from "../Model/MessageSchema.js";
-import ProfileSchema from "../Model/ProfileSchema.js";
+const cloudinary  =  require("cloudinary").v2;
+const MessageSchema = require("../Model/MessageSchema.js");
+const ProfileSchema = require("../Model/ProfileSchema.js");
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -253,4 +252,4 @@ const profile = {
   },
   ShowConnection: async (req, res) => {},
 };
-export default profile;
+module.exports = profile;

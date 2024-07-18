@@ -1,4 +1,4 @@
-import MessageSchema from "../Model/MessageSchema.js";
+const MessageSchema = require("../Model/MessageSchema.js");
 
 
 
@@ -37,4 +37,4 @@ const message = {
     
   },
 };
-export default message;
+module.exports =  message;
