@@ -99,7 +99,8 @@ const message = {
     try{
     
            const current_user = await ProfileSchema.findOne({_id:_id});
-           const current_username = current_user.name;
+           const current_username = current_user.name;u
+           
            const current_id = current_user._id
            const messagedata = await MessageSchema.findOne(
              {
