@@ -99,7 +99,7 @@ const auth = {
         //     message:'Invalid detail'
         //   })
         res.json({
-          message:"hello world 2"
+          message:"hello world 3"
         })
           
         } catch (error) {
