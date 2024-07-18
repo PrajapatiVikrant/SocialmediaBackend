@@ -4,7 +4,7 @@ const { Server } = require("socket.io")
 const jwt = require("jsonwebtoken")
 const { config } = require("dotenv");
 const mongoose = require("mongoose")
-const db = require("./Config/db.js")
+require("./Config/db.js")
 const app = require("./app.js");
 const MessageSchema = require("./Model/MessageSchema.js");
 const JWTverify = require("./Middleware/JWTverify.js");
@@ -182,6 +182,6 @@ io.on('connection',(socket)=>{
   })
 const port = process.env.PORT_NO || 5000 ;
 server.listen(port,async()=>{
-    db();
+    
     console.log(`server listen at https://black-chef-tktuc.pwskills.app:${port} `)
 })
