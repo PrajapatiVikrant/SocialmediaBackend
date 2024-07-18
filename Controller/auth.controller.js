@@ -73,7 +73,7 @@ const jwt = require("jsonwebtoken")
 // };
 const auth = {
   login: async (req, res) => {
-        // const {email,password} = req.params;
+         const {email,password} = req.params;
         // try {
         //   const data = await ProfileSchema.findOne({email:email});
         //   if(!data){
@@ -106,7 +106,7 @@ const auth = {
         //   })
         // }
         res.json({
-          message:"hello world"
+          message:"hello world 1"
         })
       },
 }
