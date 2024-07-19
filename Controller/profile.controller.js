@@ -147,7 +147,11 @@ const profile = {
         _id: _id,
         "invitation.id": user_id,
       });
-      if (invitation) {
+      const requested = await ProfileSchema.findOne({
+        _id: _id,
+        "request.id": user_id,
+      });
+      if (invitation||requested) {
         return res.json({
           message: "Connecting",
         });
@@ -165,9 +169,11 @@ const profile = {
             message: "Connected",
           });
         }
-        return res.json({
-          message: "Connect",
-        });
+          return res.json({
+            message: "Connect",
+          });
+       
+        
       }
     } catch (error) {
       console.log(error);
